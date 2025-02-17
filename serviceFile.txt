@@ -1,0 +1,32 @@
+package com.student.StudentCRUD.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.student.StudentCRUD.dao.StudentRespository;
+import com.student.StudentCRUD.model.Student;
+
+import java.util.*;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	StudentRespository respository;
+	
+	public List<Student> getAllStudents() {
+		return respository.findAll();
+	}
+	
+	public Optional<Student> getStudentById(int id){
+		return respository.findById(id);
+	}
+	
+	public Student saveStudent(Student student) {
+		return respository.save(student);
+	}
+	
+	public void deleteStudent(int id) {
+		respository.deleteById(id);
+	}
+}

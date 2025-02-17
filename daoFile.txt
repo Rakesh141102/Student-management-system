@@ -1,0 +1,9 @@
+package com.student.StudentCRUD.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.student.StudentCRUD.model.*;
+
+public interface StudentRespository extends JpaRepository<Student,Integer>{
+
+}
